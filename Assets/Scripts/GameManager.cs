@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        remainingTargets = FindObjectsOfType<TargetInteractable>().Length;
+        remainingTargets = FindObjectsOfType<Collectable>().Length;
         Debug.Log("Targets remaining = " + remainingTargets);
     }
 

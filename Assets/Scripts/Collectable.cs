@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    pulic enum InteractableType
+    public enum InteractableType
     {
         Collectable,
-        Trap,
+        Trap
     }
     
     public InteractableType type;
