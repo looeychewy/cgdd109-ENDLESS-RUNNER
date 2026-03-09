@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62746874}
   m_Layer: 0
-  m_Name: Box Object
+  m_Name: OLD BOXES (Sprites)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 220219886}
   - component: {fileID: 220219887}
   - component: {fileID: 220219888}
+  - component: {fileID: 220219889}
   m_Layer: 0
   m_Name: Delivery Driver 1
   m_TagString: Untagged
@@ -236,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 220219882}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8, y: -2.05, z: 0}
+  m_LocalPosition: {x: -3.765, y: -2.05, z: 0}
   m_LocalScale: {x: 1.8738794, y: 1.8738794, z: 1.8738794}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,6 +339,27 @@ PolygonCollider2D:
       - {x: 0.40625, y: 0.40625}
       - {x: 0.3125, y: 0.5}
   m_UseDelaunayMesh: 0
+--- !u!95 &220219889
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220219882}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f480ec4725d724e0eb04639559d8fc6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &400862337
 GameObject:
   m_ObjectHideFlags: 0
