@@ -11,6 +11,8 @@ public class RigidBodyBasedMoveWithGravity : MonoBehaviour
 
     [SerializeField] int score = 0;
 
+    [SerializeField] private Animator animator;
+
     Vector2 currentVelocity;
     Rigidbody2D rb;
 
@@ -51,6 +53,16 @@ public class RigidBodyBasedMoveWithGravity : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
             jumpPressed = false;
+        }
+
+        // References run/idle animation
+        if (moveX != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
         }
     }
 
