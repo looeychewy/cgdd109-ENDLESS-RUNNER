@@ -22,7 +22,7 @@ public class TargetInteractable : MonoBehaviour
     {
         if(type == InteractableType.Collectable)
         {
-            gameManager.TargetCollected();
+            gameManager.BoxCollected();
         }
         gameObject.SetActive(false);
     }

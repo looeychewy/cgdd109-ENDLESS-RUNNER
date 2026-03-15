@@ -1,24 +1,25 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    int remainingTargets;
+    int boxesCollected = 0;
+
+    [SerializeField] TMP_Text scoreText;
 
     void Start()
     {
-        remainingTargets = FindObjectsOfType<TargetInteractable>().Length;
-        Debug.Log("Targets remaining = " + remainingTargets);
+        updateScoreUI();
     }
 
-    public void TargetCollected()
+    public void BoxCollected()
     {
-        remainingTargets -= 1;
-        Debug.Log("Targets remaining = " + remainingTargets);
+        boxesCollected += 1;
+        updateScoreUI();
+    }
 
-        if (remainingTargets <= 0)
-        {
-            Debug.Log("ALL TARGETS COLLECTED! Level Complete!");
-            // put win UI / next level code here
-        }
+    void updateScoreUI()
+    {
+        scoreText.text = "Boxes collected: " + boxesCollected;
     }
 }

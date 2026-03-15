@@ -6,8 +6,11 @@ public class RigidBodyBasedMoveWithGravity : MonoBehaviour
     [SerializeField] float maxSpeed = 5f;
     [SerializeField] float accel = 12f;
     [SerializeField] float decel = 16f;
-
     [SerializeField] float jumpImpulse = 7f;
+
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundCheckRadius = 0.1f;
+    [SerializeField] LayerMask groundLayer;
 
     [SerializeField] int score = 0;
 
@@ -18,6 +21,11 @@ public class RigidBodyBasedMoveWithGravity : MonoBehaviour
 
     float moveX;
     bool jumpPressed;
+
+    bool isGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
 
     void Awake()
     {
@@ -49,11 +57,11 @@ public class RigidBodyBasedMoveWithGravity : MonoBehaviour
 
         rb.velocity = currentVelocity;
 
-        if (jumpPressed)
+        if (jumpPressed && isGrounded())
         {
             rb.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
-            jumpPressed = false;
         }
+        jumpPressed = false;
 
         // References run/idle animation
         if (moveX != 0)
