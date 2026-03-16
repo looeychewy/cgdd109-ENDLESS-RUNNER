@@ -24,6 +24,10 @@ public class TargetInteractable : MonoBehaviour
         {
             gameManager.BoxCollected();
         }
+        else if (type == InteractableType.Trap)
+        {
+            gameManager.GameOver();
+        }
         gameObject.SetActive(false);
     }
 }
