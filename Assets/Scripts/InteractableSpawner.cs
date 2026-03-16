@@ -11,16 +11,30 @@ public class InteractableSpawner : MonoBehaviour
     [SerializeField] float minY = -1f;
     [SerializeField] float maxY = 2f;
 
+
+    public static float currentSpeed = 5f;
+    [SerializeField] float initSpeed = 5f;
+    [SerializeField] float maxSpeed = 10f;
+    [SerializeField] float speedIncreaseRate = 0.1f;
+
     void Start()
     {
+        currentSpeed = initSpeed;
         StartCoroutine(SpawnLoop());
+    }
+
+    void Update()
+    {
+        currentSpeed = Mathf.Min(currentSpeed + speedIncreaseRate * Time.deltaTime, maxSpeed);
     }
 
     IEnumerator SpawnLoop()
     {
         while (true)
-        {
-            yield return new WaitForSeconds(Random.Range(minInterval, maxInterval));
+        {   
+            // lerp for smoother restart
+            float interval = Mathf.Lerp(maxInterval, minInterval, currentSpeed / maxSpeed);
+            yield return new WaitForSeconds(interval);
 
             float y = Random.Range(minY, maxY);
             GameObject prefab = interactablePrefabs[Random.Range(0, interactablePrefabs.Length)];

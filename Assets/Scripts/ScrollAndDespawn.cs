@@ -4,6 +4,7 @@ public class ScrollAndDespawn : MonoBehaviour
 {
     [SerializeField] float speed = 5f;  
     [SerializeField] float despawnX = -15f;
+    
 
     void Update()
     {

@@ -226,7 +226,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -253,7 +253,7 @@ MonoBehaviour:
   maxSpeed: 8
   accel: 900
   decel: 900
-  jumpImpulse: 6
+  jumpImpulse: 19
   groundCheck: {fileID: 1711286882}
   groundCheckRadius: 0.1
   groundLayer:
@@ -305,13 +305,26 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.40625, y: 0.5}
-      - {x: -0.40625, y: -0.28125}
-      - {x: -0.28125, y: -0.5}
-      - {x: 0.375, y: -0.5}
-      - {x: 0.40625, y: -0.375}
-      - {x: 0.40625, y: 0.40625}
-      - {x: 0.3125, y: 0.5}
+    - - {x: -0.31231236, y: 0.46033734}
+      - {x: -0.37659153, y: 0.10856965}
+      - {x: -0.320482, y: 0.009807501}
+      - {x: -0.3162795, y: -0.062402412}
+      - {x: -0.24174306, y: -0.09558589}
+      - {x: -0.23783115, y: -0.39429688}
+      - {x: -0.24234378, y: -0.5048634}
+      - {x: 0.27338403, y: -0.50923765}
+      - {x: 0.26681232, y: -0.41057757}
+      - {x: 0.1753046, y: -0.37499985}
+      - {x: 0.19208197, y: -0.10750224}
+      - {x: 0.26032013, y: -0.074954994}
+      - {x: 0.29108065, y: -0.003106039}
+      - {x: 0.29988477, y: 0.07588334}
+      - {x: 0.2290171, y: 0.09650482}
+      - {x: 0.23271383, y: 0.25882322}
+      - {x: 0.3576335, y: 0.26693842}
+      - {x: 0.3478423, y: 0.33526742}
+      - {x: 0.23131318, y: 0.33591467}
+      - {x: 0.23134367, y: 0.4603236}
   m_UseDelaunayMesh: 0
 --- !u!95 &220219889
 Animator:
@@ -638,6 +651,61 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &546872244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546872246}
+  - component: {fileID: 546872245}
+  m_Layer: 0
+  m_Name: Obstacle Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &546872245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546872244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce8cb7d7199846a2a8a14ab328db288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactablePrefabs:
+  - {fileID: 2196964789854125822, guid: 88b6901d0e8a24382ada321c590b2cf0, type: 3}
+  - {fileID: 3060771839834795047, guid: 5f4cfe9ad61c34eee96bd0a79bf44454, type: 3}
+  minInterval: 1.5
+  maxInterval: 3
+  spawnX: 12
+  minY: -3.01
+  maxY: -3.01
+  initSpeed: 5
+  maxSpeed: 10
+  speedIncreaseRate: 0.05
+--- !u!4 &546872246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546872244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.25, y: -3.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -975,13 +1043,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactablePrefabs:
-  - {fileID: 8869494147917356639, guid: fb3dfb5743b4845049b5e0d80c2df009, type: 3}
-  - {fileID: 7666630804718701807, guid: 3a673c3992a1f400585241123574fe49, type: 3}
+  - {fileID: 7711992938412086655, guid: 9bc6458b6882c4518b85fbd19e5436c2, type: 3}
+  - {fileID: 7634259532618408958, guid: 191a980231a204bc5a83467b7c6b0f20, type: 3}
   minInterval: 1.5
   maxInterval: 3
   spawnX: 12
   minY: -1
   maxY: 2
+  initSpeed: 5
+  maxSpeed: 10
+  speedIncreaseRate: 0.05
 --- !u!4 &894569093
 Transform:
   m_ObjectHideFlags: 0
@@ -1481,7 +1552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5775f01799b6744e692a8720c10f4e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
 --- !u!114 &1398297174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,7 +2831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5775f01799b6744e692a8720c10f4e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &1846069920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2950,3 +3019,4 @@ SceneRoots:
   - {fileID: 363466505}
   - {fileID: 455294371}
   - {fileID: 894569093}
+  - {fileID: 546872246}

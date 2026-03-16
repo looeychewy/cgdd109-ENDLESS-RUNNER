@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        InteractableSpawner.currentSpeed = 5f;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

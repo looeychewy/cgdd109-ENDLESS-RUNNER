@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 5f;
-    public float Speed => speed;
+    public float Speed => InteractableSpawner.currentSpeed;
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * InteractableSpawner.currentSpeed * Time.deltaTime;
     }
 }

@@ -74,6 +74,14 @@ public class RigidBodyBasedMoveWithGravity : MonoBehaviour
         }
     }
 
+    // Keeps player within camera bounds
+    void LateUpdate()
+    {
+        Vector3 pos = transform.position;
+        pos.y = Mathf.Clamp(pos.y, -5.1f, 5f);
+        pos.x = Mathf.Clamp(pos.x, -7.9f, 7.9f);
+        transform.position = pos;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         // Simplified way (tag + directly disable):
