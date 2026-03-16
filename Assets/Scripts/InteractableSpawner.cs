@@ -12,6 +12,7 @@ public class InteractableSpawner : MonoBehaviour
     [SerializeField] float maxY = 2f;
 
 
+    [Header("----------------- Difficulty Settings  -----------------")]
     public static float currentSpeed = 5f;
     [SerializeField] float initSpeed = 5f;
     [SerializeField] float maxSpeed = 10f;
