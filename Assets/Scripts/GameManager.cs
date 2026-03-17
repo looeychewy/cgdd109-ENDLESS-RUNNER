@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     int boxesCollected = 0;
-    //public UnityEvent onPlay = new UnityEvent();
     int highScore = 0;
 
     [SerializeField] TMP_Text scoreText;
@@ -20,12 +19,6 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(false);
         updateScoreUI();
     }
-
-    /*public void StartGame()
-    {
-        onPlay.Invoke();
-        isPlaying = true;
-    }*/
 
     public void BoxCollected()
     {

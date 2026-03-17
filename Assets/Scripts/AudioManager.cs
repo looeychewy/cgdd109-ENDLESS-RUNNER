@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    
+
     private AudioSource audioSource;
     public AudioClip bgMusic;
 
     [SerializeField] AudioSource sfxSource;
 
+    // SFX types for game
     public AudioClip rockDeath;
     public AudioClip wallDeath;
     public AudioClip coneDeath;
     public AudioClip boxPickup;
     public AudioClip milestone;
+
 
     private void Awake()
     {
@@ -31,7 +33,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         if (bgMusic != null)

@@ -24,6 +24,7 @@ public class TargetInteractable : MonoBehaviour
     {
         if(type == InteractableType.Collectable)
         {
+            CollectEffect.Instance.Play(transform.position);
             AudioManager.Instance.PlaySFX(AudioManager.Instance.boxPickup);
             gameManager.BoxCollected();
         }

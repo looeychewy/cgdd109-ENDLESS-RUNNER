@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+// Hitting obstacle cam shake effect
 public class CameraShake : MonoBehaviour
 {
     public static CameraShake Instance;
