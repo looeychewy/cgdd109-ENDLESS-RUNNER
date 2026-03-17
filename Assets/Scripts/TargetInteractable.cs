@@ -7,7 +7,9 @@ public class TargetInteractable : MonoBehaviour
     public enum InteractableType
     {
         Collectable,
-        Trap
+        Rock,
+        Wall,
+        Cone
     }
     
     public InteractableType type;
@@ -22,10 +24,22 @@ public class TargetInteractable : MonoBehaviour
     {
         if(type == InteractableType.Collectable)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.boxPickup);
             gameManager.BoxCollected();
         }
-        else if (type == InteractableType.Trap)
+        else if (type == InteractableType.Rock)
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.rockDeath);
+            gameManager.GameOver();
+        }
+        else if (type == InteractableType.Wall)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.wallDeath);
+            gameManager.GameOver();
+        }
+        else if (type == InteractableType.Cone)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.coneDeath);
             gameManager.GameOver();
         }
         gameObject.SetActive(false);

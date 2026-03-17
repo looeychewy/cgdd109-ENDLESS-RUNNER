@@ -8,6 +8,7 @@ public class ScrollAndDespawn : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("ScrollAndDespawn running on: " + gameObject.name);
         transform.position += Vector3.left * speed * Time.deltaTime;
 
         if (transform.position.x < despawnX)

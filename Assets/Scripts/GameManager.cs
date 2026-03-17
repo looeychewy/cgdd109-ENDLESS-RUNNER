@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FlashMilestone()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.milestone);
         for (int i = 0; i < 10; i++)
         {
             scoreText.gameObject.SetActive(!scoreText.gameObject.activeSelf);
@@ -50,6 +51,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        StartCoroutine(CameraShake.Instance.Shake(0.4f, 0.15f));
+        AudioManager.Instance.PauseBGMusic();
+
         if (boxesCollected > highScore)
         {
             highScore = boxesCollected;
@@ -62,6 +66,8 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        AudioManager.Instance.PlayBGMusic(true, null);
+        
         InteractableSpawner.currentSpeed = 5f;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
